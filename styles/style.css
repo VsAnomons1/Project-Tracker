@@ -1,0 +1,60 @@
+:root{
+    --lightteal: #a6c5a9;
+    --lightblue: #7ba1fa;
+    --lightgray:  rgb(150, 181, 195);
+}
+body {
+    font-family: 'Lato', sans-serif;
+    font-family: 'Roboto Mono', monospace;
+}
+.custom-jumbotron {
+    color: beige;
+    font-weight:bolder;
+    background-color: var(--lightteal);
+}
+
+.custom-main {
+    background-color: var(--lightblue);
+}
+.card {
+    background-color: var(--lightgray);
+}
+.card-header{
+    color: beige;
+    background-color: var(--lightteal);
+}
+.list-group-item {
+    color: beige;
+    font-weight: bolder;
+    background-color: var(--lightteal);
+}
+.card-footer {
+    font-weight: bolder;
+    background-color: var(--lightteal);
+}
+.card-footer:hover {
+    color: beige;
+    background-color: #a6c5a9e3;
+}
+.ui-datepicker {
+    color: white;
+    background-color: var(--lightblue);
+}
+
+.ui-datepicker-header {
+    color: white;
+    background-color: var(--lightteal);
+}
+.ui-datepicker-calendar{
+    border-top: 2px solid white;
+}
+.custom-thead {
+    background-color: var(--lightteal);
+}
+.btn-custom {
+    background-color: var(--lightteal);
+}
+.btn-custom:hover {
+    color: beige;
+    background-color: var(--lightteal);
+}

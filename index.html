@@ -5,8 +5,98 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.css" integrity="sha512-lCk0aEL6CvAGQvaZ47hoq1v/hNsunE8wD4xmmBelkJjg51DauW6uVdaWEJlwgAE6PxcY7/SThs1T4+IMwwpN7w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link href="styles/style.css" rel="stylesheet" type="text/css"/>
+<script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js" integrity="sha256-6XMVI0zB8cRzfZjqKcD01PBsAy3FlDASrlC8SxCpInY=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.29.4/moment.min.js"></script>
 </head>
 <body>
-    
+    <div class="container-fluid vh-100 px-0">
+    <header class="jumbotron h-25 w-auto custom-jumbotron">
+        <div class="d-flex flex-column align-items-center justify-content-center h-100 my-auto">
+        <h2 class="h2 fw-bolder">Project Tracker</h2>
+        <h3 class="h3 fw-bolder">Current Time & Date:</h3>
+        <p class="h4 fw-bolder" id="date"></p>
+        </div>
+    </header>
+    <main class="row justify-content-center pt-5 px-2 h-75 me-0 custom-main">
+        <aside class="col-12 col-md-4 col-lg-3">
+            <div class="card">
+                <h3 class="card-header">Instructions</h3>
+                <div class="card-content px-3 pt-3">
+                <p>Click the button below to open a form and provide information
+                    for the following:
+                </p>
+                <ul class="list-group list-group-flush pb-4">
+                    <li class="list-group-item">Project Name</li>
+                    <li class="list-group-item">Project Type</li>
+                    <li class="list-group-item">Due Date</li>
+                    <li class="list-group-item">Hourly Rate</li>
+                </ul>
+                </div>
+                <button class="btn card-footer rounded-0 rounded-bottom" data-bs-toggle="modal" data-bs-target="#modal">Add Project</button>
+                <div class="modal fade" id="modal" tabIndex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="card px-3 py-3">
+                    <div class="card-header">
+                        <h4>Add a new project</h4>
+                    </div>
+                    <div class="card-content py-3">
+                    <form>
+                        <label for="project-name" class="form-label">Project Name</label>
+                        <input id="project-name" class="form-control" type="text">
+                        <label for="project-type" class="form-label">Project Type</label>
+                        <select id="project-type" class="form-control">
+                            <option value="">Pick one...</option>
+                            <option value="Web Application (Front-End)">Web Application (Front End)</option>
+                            <option value="Web Application (Back-End)">Web Application (Back End)</option>
+                            <option value="Web Application (Full-Stack)">Web Application (Full Stack)</option>
+                            <option value="Mobile Application">Moblile Application</option>
+                            <option value="Print Campaign">Print Campaign</option>
+                            <option value="Digital Marketing Campaign">Digital Marketing Campaign</option>
+                        </select>
+                        <label for="hourly-rate" class="form-label">Hourly Rate ($)</label>
+                        <input id="hourly-rate" class="form-control" type="number" placeholder="$">
+                        <label for="due-date" class="form-label">Due Date</label>
+                        <input id="due-date" class="form-control">
+                    </form>
+                </div>
+                <div class="card-footer">
+                    <button id="close-btn" class="btn" data-bs-dismiss="modal">Close</button>
+                    <button id="submit-btn"  class="btn" data-bs-dismiss="modal">Submit Project Info</button>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+            </div>
+        </aside>
+        <div class="container-fluid col-12 col-md-7 col-lg-8">
+        <div class=" h-auto table-responsive">
+        <table class=" table align-middle">
+            <thead class="align-middle">
+                <tr class="border custom-thead">
+                    <th scope="col">Project Name</th>
+                    <th scope="col">Project Type</th>
+                    <th scope="col">Hourly Rate($)</th>
+                    <th scope="col">Due Date</th>
+                    <th scope="col">Days Until Due Date</th>
+                    <th scope="col">Potential Total Earnings($)</th>
+                    <th scope="col">X</th>
+                </tr>
+            </thead>
+        </table>
+        </div>
+        </div>
+    </main>
+    </div>
+<script src="scripts/script.js"></script>
 </body>
 </html>
